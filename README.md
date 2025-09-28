@@ -21,6 +21,16 @@ Backend (worker): https://ai-chatbot-worker.ravindranath-ramanujamloganathan.wor
 
 Important: Per assignment rules, the repository name should be prefixed with `cf_ai_`. If this repo is not yet renamed, please rename it before submitting (e.g., `cf_ai_chatbot_workers_ai`).
 
+## Application Preview
+
+![image1](project-screenshots/image1.png)
+
+![image2](project-screenshots/image2.png)
+
+![image3](project-screenshots/image3.png)
+
+![image4](project-screenshots/image4.png)
+
 ## Overview
 A production‑ready AI chat application built entirely on Cloudflare:
 - Workers AI for inference (default: `@cf/meta/llama-2-7b-chat-int8`) and also used Llama 3 
