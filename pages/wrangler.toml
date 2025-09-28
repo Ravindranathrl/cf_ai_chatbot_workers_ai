@@ -1,0 +1,8 @@
+# Cloudflare Pages configuration
+name = "ai-chatbot-frontend"
+compatibility_date = "2024-09-24"
+
+# Build configuration
+[build]
+command = ""
+output_dir = "public"

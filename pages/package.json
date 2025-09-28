@@ -1,0 +1,14 @@
+{
+  "name": "ai-chatbot-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Cloudflare AI Chatbot with Memory",
+  "scripts": {
+    "dev": "wrangler pages dev public --port 3000",
+    "deploy": "wrangler pages deploy public"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.30.1"
+  }
+}

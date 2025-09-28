@@ -1,0 +1,49 @@
+{
+  "name": "ai-chatbot-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-09-24",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  
+  // Durable Objects declaration
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CHAT_SESSION",
+        "class_name": "ChatSession"
+      }
+    ]
+  },
+  
+  // KV Namespace bindings
+  "kv_namespaces": [
+    {
+      "binding": "CHAT_HISTORY",
+      "id": "8102c5f5edf4454090232e9e8ac7b5c7"
+    },
+    {
+      "binding": "FILE_STORAGE",
+      "id": "8102c5f5edf4454090232e9e8ac7b5c7"
+    }
+  ],
+  
+  // Workers AI binding
+  "ai": {
+    "binding": "AI"
+  },
+  
+  // Migrations for Durable Objects
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["ChatSession"]
+    }
+  ],
+
+  // Local development settings
+  "dev": {
+    "port": 8787,
+    "local_protocol": "http"
+  }
+}

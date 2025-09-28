@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloudflare AI Chatbot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <div class="header-title">
+          <h1><i class="fas fa-robot"></i> Cloudflare AI Chatbot</h1>
+          <p>Powered by Workers AI</p>
+        </div>
+        <div class="header-controls">
+          <div id="realtime-status" class="realtime-status" title="Realtime Connection Status">
+            <span class="status-indicator"></span>
+            <span class="status-text">Connecting...</span>
+          </div>
+          <div class="model-selector">
+            <select id="model-selector">
+              <option value="@cf/meta/llama-2-7b-chat-int8" selected>Llama 2 (7B)</option>
+              <option value="@hf/thebloke/mistral-7b-instruct-v0.1-awq">Mistral (7B)</option>
+              <option value="@cf/meta/llama-3-8b-instruct">Llama 3 (8B)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="app-layout">
+        <!-- Chat Sessions Sidebar -->
+        <div class="sessions-sidebar">
+          <div class="watermark">
+            <p>Made by Ravi</p>
+            <a href="https://www.linkedin.com/in/ravindranath-rl/" target="_blank" class="linkedin-link">
+              <i class="fab fa-linkedin"></i> Connect
+            </a>
+          </div>
+          <button id="new-chat-button" class="new-chat-button">
+            <i class="fas fa-plus"></i> New Chat
+          </button>
+          
+          <div class="sessions-list" id="sessions-list">
+            <!-- Chat sessions will be added here dynamically -->
+            <div class="session-tab active" data-session-id="default">
+              <span class="session-name">Chat 1</span>
+              <button class="delete-session" title="Delete chat">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Main Chat Area -->
+        <div class="chat-area">
+          <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+              <div class="message system">
+                <div class="message-content">
+                  <p>Hello! I'm your AI assistant. I can remember our conversation even if you refresh the page or come back later. How can I help you today?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-container">
+              <div class="input-row">
+                <textarea id="chat-input" placeholder="Type your message..." rows="1"></textarea>
+                <button id="send-button" title="Send message">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="clear-chat" class="control-button">
+              <i class="fas fa-trash"></i> Clear Chat History
+            </button>
+            <button id="clear-all-sessions" class="control-button" style="margin-left: 10px; background-color: #dc3545;">
+              <i class="fas fa-exclamation-triangle"></i> Clear All Sessions
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Built with Cloudflare Workers, Durable Objects, KV, Realtime, and Pages</p>
+    </footer>
+  </div>
+
+  <script src="realtime.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
